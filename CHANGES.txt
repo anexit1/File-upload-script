@@ -1,0 +1,20 @@
+1.0.3
+
+- fix files where not being properly deleted
+
+modified:   uploader/app/src/admin.php
+modified:   uploader/app/src/front.php
+
+1.0.2
+
+- allow to block uploads by file extension
+- improve the included .htaccess file
+- update documentation
+
+modified:   uploader/app/config/settings.install.php
+modified:   uploader/app/src/admin.php
+modified:   uploader/app/src/front.php
+modified:   uploader/app/templates/admin/settings.php
+modified:   uploader/app/templates/index.php
+modified:   uploader/.htaccess
+modified:   documentation/index.html
