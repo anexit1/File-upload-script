@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Uploader Manual</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: #f8f8f8;
+  color: #404040;
+  font-family: arial, sans-serif;
+  line-height: 1.3em;
+}
+ol, ul {
+  margin-left: 1.5em;
+}
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+h1 {
+  font-size: 3em;
+  line-height: 1.5em;
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+a {
+  color: #3BA4CD;
+  text-decoration: none;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5em;
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+#cover {
+  padding: 1.5em;
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   background-color: #f0f0f0;
+   margin-bottom: 1.5em;
+  text-align: center;
+}
+#start {
+  background-color: #E2F8C5;
+  padding: 1.5em;
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   margin-bottom: 1.5em;
+}
+#start h1 {
+  text-align: center;
+  border-bottom: 1px solid #404040;
+  margin-bottom: .5em;
+}
+small {
+  font-size: .9em;
+}
+p {
+  margin-bottom: 1.5em;
+}
+code {
+  font-family: courier;
+  background-color: #f0f0f0;
+  padding: 1em;
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   margin-bottom: 1.5em;
+   display: block;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div id="cover">
+      <h1>Uploader</h1>
+      <p><b>Share files with expiration date.</b></p>
+    </div>
+    <div id="start">
+      <h1>Quick Start</h1>
+      <h2>About Uploader</h2>
+      <p>Uploader script generates download links for the uploaded files. It allows to set download expirations by date or by number of downloads.</p>
+      <h2>Installation</h2>
+      <p>Uploader includes a web-based installer to make it easir to install the script in your server.</p>
+      <ol>
+        <li>Create a database in your server.
+          <p><small>This is usually done through your hosting's administration panel with tools such as phpMyAdmin.</small></p>
+        </li>
+        <li>Upload the script to your server.
+          <p><small>This is usually done via FTP, but your hosting admin panel may have tools to upload the files too.</small></p>
+        </li>
+        <li>Open the uploaded script with your web browser.
+          <p><small>Ex. http://example.com/uploader</small></p>
+        </li>
+        <li>Fill the web-based installer form
+          <p><small>You'll need to provide the database settings here.</small></p>
+        </li>
+        <li>You're ready to go!</li>
+      </ol>
+      <h2>Using Uploader</h2>
+      <p>The homepage of the Uploader script will allow you, or your users, to upload files and set an expiration date for the download link it generates.</p>
+      <p>Just click on the cloud icon to choose a file from your harddrive, set the expiration options as needed and submit the form.</p>
+      <p>Once you've uploaded the script you'll be redirected to a page where you can share the download link for your file. This link will expire depending on the expiration options you used.</p>
+      <h2>Administrator panel</h2>
+      <p>To login the administrator panel you just need to browse to the /admin page. Ex. http://example.com/uploader/admin. And login with the credentilas you provided at installation time.</p>
+      <p>The admin panel lets you download and delete the uploaded files.</p> 
+    </div>
+    <h1>About Uploader</h1>
+    <p>Uploader is PHP script that allows you to share files with an expiration date.</p>
+    <p>The Uploader script is built with the <b>Slim</b> micro-framework + <b>Idiorm</b> for database access, all installwe via <b>Composer</b>.</p>
+    
+    <h1>System requirements</h1>
+    <ul>
+      <li><p>PHP >= 5.3.0 with the MySQL PDO drivers.</p></li>
+      <li><p>Apache2 or Nginx server with URL rewriting. (mod_rewrite or similar)</p></li>
+      <li><p>MySQL 5.1 or greater.</p></li>
+    </ul>
+    <h1>Installation</h1>
+    <p>The official way of installing the script is using the web-based installer, which is integrated in the script's code.</p>
+    <ol>
+      <li><b>Create a database in your server.</b>
+        <p><small>This is usually done through your hosting's administration panel with tools such as phpMyAdmin.</small></p>
+      </li>
+      <li><b>Upload the script to your server.</b>
+        <p><small>This is usually done via FTP, but your hosting admin panel may have tools to upload the files too.</small></p>
+      </li>
+      <li><b>Open the uploaded script with your web browser.</b>
+        <p><small>Ex. http://example.com/uploader</small></p>
+      </li>
+      <li><b>Fill the web-based installer form</b>
+        <p><small>You'll need to provide the database settings here.</small></p>
+      </li>
+    </ol>
+    <p>If you prefer to install the script manually, you can also do so following this steps:</p>
+    <ol>
+      <li><p><b>Create the database in your server.</b></p></li>
+      <li><p><b>Create the database tables using the app/schema/install.sql.</b></p></li>
+      <li><p><b>Create the app/config/settings.php file using the settings.install.php as a template.</b></p><p>Take into account the admin password is not stored in plain text, so you'll need to generate a password hash using phpass.</p><p>Alternatively you can use the string <i>$2a$12$nm8RAO67D6uC/Q1Eujw2fupf29.o3qfydtQe3fWra6p0GC95uBPy2</i> which is the hash for the password <i>admin</i>, and change it once you login to the admin panel.</li>
+      <li><p><b>Upload the script to your server.</b></p></li>
+      <li><p><b>Make sure the app/config and the app/files folders have write permissions.</b></p></li>
+    </ol>
+    <p><b>NOTICE</b>: If you're using the Apache server and using the .htaccess file provided by the script, it will work out of the box. In case you're using a different server you'll need to set it up for url rewriting. See the URL Rewriting section below or the Slim's route rewriting section in its <a href="http://docs.slimframework.com/#Route-URL-Rewriting">documentation</a>.</p>
+    <h2>URL Rewriting</h2>
+    <p>Uploader requires URL rewriting in order to work, so it includes an <i>.htaccess</i> file to set up mod_rewrite. The contents of this file are:
+      <pre><code>
+        RewriteEngine On
+        RewriteCond %{REQUEST_URI} ^(.*)?app/.* [OR]
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteRule ^(.*)$ index.php [QSA,L]
+      </code></pre>
+      <p>Feel free to modify it to adapt it to your needs or to your server settings.</p>
+      <p>For Nginx the configuration should look something like this, depending on your server settings:</p>
+      <pre><code>
+        server {
+            listen       80;
+            server_name  www.mysite.com mysite.com;
+            root         /path/www.mysite.com/public_html;
+
+            try_files $uri /index.php;
+
+            location /index.php {
+                fastcgi_connect_timeout 3s;     # default of 60s is just too long
+                fastcgi_read_timeout 10s;       # default of 60s is just too long
+                include fastcgi_params;
+                fastcgi_pass 127.0.0.1:9000;    # if php-fpm runs locally on port 9000
+            }
+
+            location /app { # deny access to the /app folder
+                deny all;
+            }
+        }
+      </code></pre>
+    <p>When setting the URL rewriting up, make sure the app/ folder and its contents are not accessible.</p>
+    <h1>Uploaded files</h1>
+    <p>The uploaded files are stored in the app/files/ folder, make sure it has write permissions.</p>
+    <p>When someone tryes to download a file that has reached its expiration date or downloads limit, the file user is redirected to the expiration page and the file is removed from the disk to save you some space.</p>
+    <p>The files are not directly acceseble from the internet, they must be downloaded through the script, this way Uploader can control the expiration options for each file.</p> 
+    <p>If you're using apache with the .htaccess file included with the script, it will work out of the box. Otherwise, you will need to make sure the app/ folder can't be accessed directly using your own server URL rewrite settings. See the Slim framework URL rewriting <a href="http://docs.slimframework.com/#Route-URL-Rewriting">documentation</a> for some examples.</p>
+    <h1>Customizing the script</h1>
+    <p>The script's PHP source code is in the index.php file and in the app/src/ folder files, it also makes use of some third party libraries, such as Slim and Idiorm. All third party libraries are located in the app/vendor/ folder and are loaded using Composer, whith the app/composer.json file.</p>
+    <p>Uploader uses PHP for its templates, instead of using third party template libraries. Templates are simple enough to be modified even with just basic PHP knowledge. They are all located in the app/templates/ folder.</p>
+    <p>The css files are in the css/ folder, as you'd expect. There are two different style files, one for the front end and one for the admin panel.</p>
+    <p>The images are in the img/ folder, feel free to replace them with your own.</p>
+    <h1>Contact</h1>
+    <p>Contact with the author via <a href="http://codecanyon.net/user/momo2/portfolio?ref=momo2">CodeCanyon</a> or through the <a href="http://ivanribas.com">author's own website</a>.
+  </div>
+</body>
+</html>
